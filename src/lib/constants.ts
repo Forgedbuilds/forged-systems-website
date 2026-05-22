@@ -6,70 +6,70 @@ export const NAV_LINKS = [
 ];
 
 export const PROOF_BAR_ITEMS = [
-  '⚡ 6 AI Agents Active 24/7',
-  '📈 Average 340% ROI in 90 Days',
-  '🎯 Lead Response Time Under 60 Seconds',
+  '⚡ Lead Response Under 60 Seconds',
   '🌍 Clients in UAE · UK · USA · Australia',
-  '💰 $2.4M Revenue Generated for Clients',
+  '🎯 Custom-Built. Not Templates.',
+  '📈 Revenue Recovery in 30 Days',
   '🔒 Zero Missed Leads. Ever.',
-  '⚙️ 99.97% System Uptime',
-  '🚀 First Results in 14 Days',
+  '⚙️ Boutique Agency. Founder-Led.',
+  '🚀 Live Systems — Not Slide Decks',
+  '💰 Built on the Same AI the Founder Uses',
 ];
 
 export const PAIN_POINTS = [
   {
     stat: '73%',
-    statLabel: 'of leads go cold',
-    headline: 'You Are Losing Deals While You Sleep',
+    statLabel: 'of leads go cold within an hour',
+    headline: 'Slow Response Is Costing You Deals You Never See',
     body:
-      'The average business takes 47 hours to respond to a new lead. Your competitor responds in 47 seconds. That gap is where your revenue disappears.',
+      'The average business takes 47 hours to respond to a new lead. Buyers make decisions in minutes. By the time your team follows up, the deal is already gone.',
   },
   {
-    stat: '$120K',
-    statLabel: 'lost per year average',
-    headline: 'Manual Follow-Up Is Killing Your Pipeline',
+    stat: '60%',
+    statLabel: 'of sales time is wasted on manual tasks',
+    headline: 'Your Team Is Doing Work AI Should Be Doing',
     body:
-      'Your sales team wastes 60% of their time on tasks that should be automated. Qualifying, scheduling, chasing — that\'s AI work. Let your humans close.',
+      'Qualifying, chasing, scheduling, following up — none of that requires a human. Every hour your team spends on admin is an hour they are not closing revenue.',
   },
   {
     stat: '3x',
-    statLabel: 'more revenue possible',
-    headline: 'Your Competitors Are Already Automating',
+    statLabel: 'more revenue with proper follow-up',
+    headline: 'Most Businesses Follow Up Once. Buyers Need Seven.',
     body:
-      'Right now, your competitors are deploying AI systems that work around the clock. While you\'re manually qualifying leads, they\'re closing the deals you should have won.',
+      'Research shows 80% of sales require at least five follow-ups. Most businesses give up after one. That gap — between one and seven — is where your revenue disappears.',
   },
 ];
 
 export const SOLUTION_COMPONENTS = [
   {
     number: '01',
-    name: 'Instant Lead Capture',
+    name: 'Instant Lead Response',
     body:
-      'Every inbound lead is captured, qualified, and responded to in under 60 seconds — 24 hours a day, 7 days a week. No lead left behind.',
+      'Every inbound lead is responded to in under 60 seconds — 24 hours a day, 7 days a week. Not a bot. A personalised, context-aware response built around your business.',
   },
   {
     number: '02',
-    name: 'AI-Powered Qualification',
+    name: 'AI Qualification Engine',
     body:
-      'Our AI scores every prospect against your ICP, filters junk, and surfaces only the high-value opportunities your team should spend time on.',
+      'Every prospect is scored against your ideal client profile. Junk filtered out. High-value opportunities surfaced instantly. Your team only speaks to buyers who are ready.',
   },
   {
     number: '03',
-    name: 'Automated Nurture Sequences',
+    name: 'Multi-Touch Follow-Up',
     body:
-      'Personalised follow-up sequences triggered by behaviour — not a calendar. The right message, at the right moment, every time.',
+      'Behaviour-triggered follow-up sequences that run for 30 days without human input. The right message, at the right moment, through the right channel — every time.',
   },
   {
     number: '04',
-    name: 'Pipeline Intelligence',
+    name: 'Warm Human Handoff',
     body:
-      'Real-time reporting on every deal in your funnel. Know what\'s stalled, what\'s hot, and where your next $10K is coming from.',
+      'When a prospect is ready, the system hands them off to your team with full context — conversation history, qualification score, and suggested next step. Your team closes.',
   },
   {
     number: '05',
-    name: 'Revenue Operations Autopilot',
+    name: 'Performance Intelligence',
     body:
-      'Invoicing, reporting, client comms — automated and orchestrated. You focus on growth, FORGE handles the ops.',
+      'Real-time visibility into every lead, every response, every conversion. Know exactly where your revenue is coming from and where it is still leaking.',
   },
 ];
 
@@ -111,43 +111,43 @@ export const INDUSTRIES = [
     icon: 'Building2',
     name: 'Property Development',
     pain: 'Leads from portals go cold in hours',
-    fix: 'AI captures and qualifies every enquiry instantly. Serious buyers get called within 60 seconds.',
+    fix: 'AI responds to every enquiry in under 60 seconds. Serious buyers get qualified and followed up before your competitors even read the notification.',
     result: '4.2x increase in qualified viewings',
   },
   {
-    icon: 'Briefcase',
-    name: 'Professional Services',
-    pain: 'High-value leads wasted on manual back-and-forth',
-    fix: 'Automated intake, qualification, and scheduling. Your team only touches sales-ready prospects.',
-    result: '68% reduction in sales cycle length',
+    icon: 'Stethoscope',
+    name: 'Dental & Medical',
+    pain: 'Missed calls and slow booking bleed revenue daily',
+    fix: 'AI handles enquiries, books appointments, sends reminders, and manages your waitlist — 24/7, without a receptionist.',
+    result: '89% reduction in no-show rate',
   },
   {
-    icon: 'TrendingUp',
-    name: 'Financial Services',
-    pain: 'Compliance overhead kills sales velocity',
-    fix: 'AI handles initial screening, document collection, and appointment booking within compliance boundaries.',
-    result: '$2.1M additional revenue in 6 months',
+    icon: 'Briefcase',
+    name: 'Legal Services',
+    pain: 'High-value leads lost to slow intake and no follow-up',
+    fix: 'Automated intake, qualification, and scheduling. Your team only touches cases that are ready to engage — not cold enquiries.',
+    result: '68% reduction in time-to-consultation',
   },
   {
     icon: 'ShoppingBag',
-    name: 'E-Commerce & Retail',
+    name: 'E-Commerce',
     pain: 'Abandoned carts and silent browsers leak revenue',
-    fix: 'Behavioural AI triggers re-engagement at the exact moment intent drops. Cart recovery on autopilot.',
+    fix: 'Behavioural AI triggers re-engagement at the exact moment intent drops. Abandoned cart recovery and post-purchase sequences on autopilot.',
     result: '31% increase in recovered revenue',
-  },
-  {
-    icon: 'Stethoscope',
-    name: 'Healthcare & Wellness',
-    pain: 'No-shows and manual booking destroy capacity',
-    fix: 'AI booking, automated reminders, waitlist management, and smart rescheduling — all integrated with your existing systems.',
-    result: '89% reduction in no-show rate',
   },
   {
     icon: 'Globe',
     name: 'Hospitality & Events',
     pain: 'Enquiries arrive at midnight and vanish by morning',
-    fix: '24/7 AI concierge qualifies event and booking requests, sends proposals, and follows up until confirmed.',
+    fix: '24/7 AI handles every enquiry, qualifies booking requests, sends proposals, and follows up until confirmed.',
     result: '3x more confirmed bookings',
+  },
+  {
+    icon: 'TrendingUp',
+    name: 'Professional Services',
+    pain: 'Senior staff wasting time on lead qualification',
+    fix: 'AI handles all initial qualification and scheduling. Your senior people only engage when a prospect is ready to buy.',
+    result: '2x deal volume, same headcount',
   },
 ];
 
@@ -156,9 +156,9 @@ export const CASE_STUDIES = [
     company: 'Palm Jumeirah Developer',
     industry: 'Property Development · Dubai',
     problem:
-      'International leads arriving via portals at off-hours. Sales team responding 12–24 hours later. High-intent buyers going cold.',
+      'International leads arriving via portals at off-hours. Sales team responding 12–24 hours later. High-intent buyers going cold before anyone picked up the phone.',
     solution:
-      'Deployed WIDOW for instant lead capture + AI qualification. PATCH handles nurture sequences for warm leads. KAREN audits pipeline daily at 6am.',
+      'Custom AI Lead Response System built and deployed. Every enquiry responded to in under 60 seconds. 30-day follow-up sequences triggered automatically. Warm handoff to sales when buyers were ready.',
     result: '247 qualified leads captured in 30 days. 4.2x increase in viewings booked. $3.8M in pipeline generated.',
     quote:
       '"We used to lose deals we didn\'t even know we had. Now every lead is captured, qualified, and followed up before our competitors even see the enquiry."',
@@ -167,61 +167,59 @@ export const CASE_STUDIES = [
     company: 'London Commercial Agency',
     industry: 'Professional Services · UK',
     problem:
-      'Senior consultants spending 40% of their time on lead qualification and scheduling — time that should be spent closing.',
+      'Senior consultants spending 40% of their time on lead qualification and scheduling — time that should be spent closing. High-value leads falling through the cracks.',
     solution:
-      'Full FORGE Revenue Stack deployed. WIDOW qualifies inbound, RHODEY preps consultants before every call, KAREN keeps pipeline clean.',
+      'Custom AI qualification and intake system deployed. Every inbound lead scored and routed. Consultants briefed with full prospect context before every call. Follow-up automated for 30 days.',
     result: '68% reduction in time-to-qualified. 3 consultants handling 2x previous deal volume. £180K additional revenue in 90 days.',
     quote:
-      '"Our team is doing the same work with half the admin. FORGE gave us back the time we were wasting on things AI should be doing."',
+      '"Our team is doing the same work with half the admin. We\'re speaking to better leads, closing faster, and nothing falls through the cracks."',
   },
 ];
 
 export const PRICING_TIERS = [
   {
-    name: 'Launch System',
+    name: 'AI Revenue Diagnostic',
     price: '$3,500',
-    tagline: 'One agent. One problem. Fixed.',
+    priceNote: null,
+    tagline: 'Start here. Know exactly where your revenue is leaking.',
     features: [
-      'Single AI agent deployment',
-      'One use case (lead capture OR nurture OR qualification)',
-      'Supabase database setup',
-      'Telegram approval workflow',
-      '2 weeks build + launch',
-      '30-day post-launch support',
+      'Full audit of your lead response and follow-up process',
+      'Revenue leakage calculation',
+      'Custom AI Revenue System blueprint',
+      '60-minute strategic debrief with Raeez',
+      'Diagnostic fee credited toward full build',
     ],
-    cta: 'Start with Launch',
+    cta: 'Book a Diagnostic',
     popular: false,
   },
   {
-    name: 'Revenue Stack',
-    price: '$8,500',
-    tagline: 'Full pipeline. Fully automated.',
+    name: 'AI Lead Response System',
+    price: '$18,000',
+    priceNote: '+ $5,500/mo',
+    tagline: 'The complete revenue recovery engine.',
     features: [
-      'Three AI agents (WIDOW + PATCH + KAREN)',
-      'Lead capture + qualification + pipeline audit',
-      'CRM integration included',
-      'Custom n8n automation workflows',
-      'ARIA dashboard access',
-      'Telegram command centre',
-      '4 weeks build + launch',
-      '90-day post-launch support',
+      'Instant lead response under 60 seconds, 24/7',
+      '30-day multi-touch follow-up sequences',
+      'Full CRM integration',
+      'AI lead qualification and scoring',
+      'Warm human handoff to your team',
+      '90-day performance monitoring',
     ],
-    cta: 'Get the Revenue Stack',
+    cta: 'Book a Discovery Call',
     popular: true,
   },
   {
-    name: 'Full FORGE OS',
-    price: '$18,000',
-    tagline: 'Your entire business on autopilot.',
+    name: 'Full AI Transformation',
+    price: '$65,000',
+    priceNote: null,
+    tagline: 'For businesses ready to operate at a different level.',
     features: [
-      'All 6 AI agents deployed',
-      'Full revenue operations automation',
-      'ARIA client dashboard (white-label option)',
-      'Voice agent integration',
-      'Financial tracking + invoicing automation',
-      'Monthly strategy call with Raeez',
-      'Dedicated infrastructure + monitoring',
-      '12-month partnership + ongoing evolution',
+      'Everything in AI Lead Response System',
+      'Custom AI agents built for your business',
+      'Voice AI for inbound calls',
+      'Full operational automation',
+      'Dedicated build team',
+      'Ongoing partnership and evolution',
     ],
     cta: 'Book a Strategy Call',
     popular: false,

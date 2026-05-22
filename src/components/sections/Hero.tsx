@@ -91,7 +91,7 @@ export default function Hero() {
             className="hud-text text-xs tracking-[0.25em]"
             style={{ color: 'var(--forge-orange)' }}
           >
-            <Typewriter text="FORGE OS — AI REVENUE SYSTEMS" delay={0.6} />
+            <Typewriter text="FORGED SYSTEMS — AI REVENUE SYSTEMS" delay={0.6} />
           </p>
         </motion.div>
 
@@ -123,8 +123,9 @@ export default function Hero() {
           className="mb-10 max-w-2xl text-lg md:text-xl leading-relaxed"
           style={{ color: 'var(--forge-muted)' }}
         >
-          We deploy AI agents that capture leads, qualify prospects, and follow up relentlessly —
-          while you focus on closing. Built to your ICP. Live in 14 days.
+          Every slow response, missed follow-up, and manual process is money walking out the door.
+          We build AI revenue systems that respond in seconds, follow up forever, and hand off warm —
+          so your team only speaks to buyers who are ready.
         </motion.p>
 
         {/* CTAs */}

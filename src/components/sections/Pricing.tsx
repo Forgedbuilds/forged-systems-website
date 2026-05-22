@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { PRICING_TIERS } from '@/lib/constants';
+
+type PricingTier = typeof PRICING_TIERS[0];
 import { staggerContainer, fadeUpVariant } from '@/lib/animations';
 
 export default function Pricing() {
@@ -32,15 +34,15 @@ export default function Pricing() {
               color: 'var(--forge-text)',
             }}
           >
-            PICK YOUR WEAPON
+            WHERE DO YOU WANT TO START?
           </motion.h2>
           <motion.p
             variants={fadeUpVariant}
             className="mt-4 max-w-xl mx-auto text-base leading-relaxed"
             style={{ color: 'var(--forge-muted)' }}
           >
-            Every engagement is a fixed-scope project. No retainers. No bloat. You pay for a
-            system that generates revenue — not hours.
+            Every system is custom-built to your business. No templates. No off-the-shelf tools.
+            If you are not sure where to start, begin with the Diagnostic.
           </motion.p>
         </motion.div>
 
@@ -100,7 +102,7 @@ export default function Pricing() {
               </div>
 
               {/* Price */}
-              <div className="mb-1 flex items-baseline gap-1">
+              <div className="mb-1 flex items-baseline gap-2 flex-wrap">
                 <span
                   className="text-xs"
                   style={{ color: 'var(--forge-muted)', fontFamily: 'var(--font-mono)' }}
@@ -113,6 +115,14 @@ export default function Pricing() {
                 >
                   {tier.price}
                 </span>
+                {(tier as PricingTier).priceNote && (
+                  <span
+                    className="text-sm"
+                    style={{ color: 'var(--forge-gold)', fontFamily: 'var(--font-mono)' }}
+                  >
+                    {(tier as PricingTier).priceNote}
+                  </span>
+                )}
               </div>
 
               {/* Tagline */}
@@ -183,7 +193,7 @@ export default function Pricing() {
           className="text-center mt-10 text-xs"
           style={{ color: 'var(--forge-muted)', fontFamily: 'var(--font-mono)' }}
         >
-          All prices in USD. Custom scopes available. Book a call to discuss your requirements.
+          All prices in USD. Every build is scoped to your business — book a call to discuss your requirements.
         </motion.p>
       </div>
     </section>
