@@ -2,7 +2,7 @@ export const NAV_LINKS = [
   { label: 'How It Works', href: '#solution' },
   { label: 'Industries', href: '#industries' },
   { label: 'Case Studies', href: '#case-studies' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'Book a Call', href: '#booking' },
 ];
 
 export const PROOF_BAR_ITEMS = [
