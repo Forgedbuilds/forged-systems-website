@@ -56,7 +56,7 @@ export default function Problem() {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 lg:py-32" style={{ background: 'var(--forge-black)' }}>
+    <section ref={ref} className="py-16 lg:py-32" style={{ background: 'var(--forge-black)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -71,10 +71,10 @@ export default function Problem() {
           </motion.p>
           <motion.h2
             variants={fadeUpVariant}
-            className="leading-tight"
+            className="leading-tight max-w-3xl mx-auto"
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2rem, 5vw, 4rem)',
+              fontSize: 'clamp(1.8rem, 5vw, 4rem)',
               color: 'var(--forge-text)',
             }}
           >

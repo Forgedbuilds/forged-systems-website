@@ -31,15 +31,16 @@ function Typewriter({ text, delay = 0 }: { text: string; delay?: number }) {
     return () => clearInterval(interval);
   }, [started, text]);
 
-  return (
-    <span className="typewriter-cursor">
-      {displayed}
-    </span>
-  );
+  return <span className="typewriter-cursor">{displayed}</span>;
 }
 
 export default function Hero() {
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
+  const [particleCount, setParticleCount] = useState(400);
+
+  useEffect(() => {
+    setParticleCount(window.innerWidth < 768 ? 200 : 800);
+  }, []);
 
   return (
     <section
@@ -47,7 +48,7 @@ export default function Hero() {
       style={{ background: 'var(--forge-black)' }}
     >
       {/* Particles */}
-      <ParticleField />
+      <ParticleField count={particleCount} />
 
       {/* Scan line */}
       <div className="scan-line" />
@@ -61,14 +62,14 @@ export default function Hero() {
         }}
       />
 
-      {/* HUD — top left */}
+      {/* HUD — top left — desktop only */}
       <div className="absolute top-20 left-6 lg:left-10 hidden md:flex flex-col gap-1">
         <div className="hud-text">SYSTEM: <span style={{ color: 'var(--forge-success)' }}>ONLINE</span></div>
         <div className="hud-text">AGENTS: <span style={{ color: 'var(--forge-success)' }}>6 ACTIVE</span></div>
         <div className="hud-text">UPTIME: 99.97%</div>
       </div>
 
-      {/* HUD — top right */}
+      {/* HUD — top right — desktop only */}
       <div className="absolute top-20 right-6 lg:right-10 hidden md:flex flex-col items-end gap-1">
         <div className="hud-text">RESPONSE TIME: &lt;60s</div>
         <div className="hud-text">LEADS PROCESSED: 24/7</div>
@@ -79,16 +80,12 @@ export default function Hero() {
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
-        className="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center"
+        className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center flex flex-col items-center"
       >
         {/* Pre-headline */}
-        <motion.div
-          variants={fadeUpVariant}
-          className="mb-6"
-          transition={{ delay: 0.6 }}
-        >
+        <motion.div variants={fadeUpVariant} className="mb-5" transition={{ delay: 0.6 }}>
           <p
-            className="hud-text text-xs tracking-[0.25em]"
+            className="hud-text tracking-[0.2em] text-[0.6rem] sm:text-xs"
             style={{ color: 'var(--forge-orange)' }}
           >
             <Typewriter text="FORGED SYSTEMS — AI REVENUE SYSTEMS" delay={0.6} />
@@ -100,8 +97,9 @@ export default function Hero() {
           className="mb-6 leading-none"
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(2.5rem, 8vw, 7rem)',
+            fontSize: 'clamp(2rem, 8vw, 6rem)',
             color: 'var(--forge-text)',
+            wordBreak: 'break-word',
           }}
         >
           {WORDS.map((word, i) => (
@@ -109,7 +107,7 @@ export default function Hero() {
               key={i}
               variants={fadeUpVariant}
               transition={{ delay: 1.0 + i * 0.04 }}
-              className="inline-block mr-[0.2em]"
+              className="inline-block mr-[0.18em]"
             >
               {word}
             </motion.span>
@@ -120,7 +118,7 @@ export default function Hero() {
         <motion.p
           variants={fadeUpVariant}
           transition={{ delay: 1.4 }}
-          className="mb-10 max-w-2xl text-lg md:text-xl leading-relaxed"
+          className="mb-10 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed px-2"
           style={{ color: 'var(--forge-muted)' }}
         >
           Every slow response, missed follow-up, and manual process is money walking out the door.
@@ -132,7 +130,7 @@ export default function Hero() {
         <motion.div
           variants={fadeUpVariant}
           transition={{ delay: 1.6 }}
-          className="flex flex-col sm:flex-row gap-4 items-center"
+          className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full sm:w-auto"
         >
           <a
             href="#booking"
@@ -140,7 +138,7 @@ export default function Hero() {
               e.preventDefault();
               document.querySelector('#booking')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="shimmer-btn group flex items-center gap-2 px-8 py-4 rounded text-white font-medium text-base transition-all duration-300"
+            className="shimmer-btn group flex items-center justify-center gap-2 px-8 py-4 rounded text-white font-medium text-base transition-all duration-300"
             style={{
               background:
                 'linear-gradient(90deg, var(--forge-orange), var(--forge-gold), var(--forge-orange))',
@@ -150,7 +148,7 @@ export default function Hero() {
             data-cursor="cta"
           >
             Book a Discovery Call
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={16} className="shrink-0 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
             href="#solution"
@@ -158,7 +156,7 @@ export default function Hero() {
               e.preventDefault();
               document.querySelector('#solution')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="flex items-center gap-2 px-8 py-4 rounded font-medium text-base transition-all duration-300 border"
+            className="flex items-center justify-center gap-2 px-8 py-4 rounded font-medium text-base transition-all duration-300 border"
             style={{
               color: 'var(--forge-text)',
               borderColor: 'var(--forge-border)',

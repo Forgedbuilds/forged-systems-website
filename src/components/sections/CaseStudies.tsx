@@ -8,7 +8,7 @@ export default function CaseStudies() {
   return (
     <section
       id="case-studies"
-      className="py-24 lg:py-32"
+      className="py-16 lg:py-32"
       style={{ background: 'var(--forge-black)' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -18,7 +18,7 @@ export default function CaseStudies() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="text-center mb-16"
+          className="text-center mb-10 lg:mb-16"
         >
           <motion.p variants={fadeUpVariant} className="section-label mb-4">
             // RESULTS IN THE FIELD
@@ -27,7 +27,7 @@ export default function CaseStudies() {
             variants={fadeUpVariant}
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2rem, 5vw, 4rem)',
+              fontSize: 'clamp(1.8rem, 5vw, 4rem)',
               color: 'var(--forge-text)',
             }}
           >
@@ -35,32 +35,32 @@ export default function CaseStudies() {
           </motion.h2>
         </motion.div>
 
-        {/* Cards */}
+        {/* Cards — single column always, 2-col on lg */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
         >
           {CASE_STUDIES.map((cs, i) => (
             <motion.div
               key={i}
               variants={fadeUpVariant}
-              transition={{ delay: i * 0.15 }}
-              className="glass-panel rounded-lg p-8 flex flex-col"
+              transition={{ delay: i * 0.12 }}
+              className="glass-panel rounded-lg p-6 sm:p-8 flex flex-col"
               style={{ border: '1px solid var(--forge-border)' }}
             >
-              {/* Company + badge */}
-              <div className="flex items-start justify-between mb-8 gap-4">
+              {/* Company + badge — stack on very small screens */}
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6 sm:mb-8 gap-3">
                 <h3
-                  className="text-2xl leading-tight"
+                  className="text-xl sm:text-2xl leading-tight"
                   style={{ fontFamily: 'var(--font-display)', color: 'var(--forge-text)' }}
                 >
                   {cs.company}
                 </h3>
                 <span
-                  className="shrink-0 px-3 py-1 rounded text-xs"
+                  className="self-start px-3 py-1 rounded text-xs shrink-0"
                   style={{
                     background: 'var(--forge-glow)',
                     border: '1px solid var(--forge-orange)',
@@ -79,7 +79,7 @@ export default function CaseStudies() {
                 { label: 'SOLUTION', text: cs.solution },
                 { label: 'RESULT', text: cs.result },
               ].map((row) => (
-                <div key={row.label} className="border-accent pl-4 mb-6">
+                <div key={row.label} className="border-accent pl-4 mb-5">
                   <p
                     className="text-xs tracking-widest mb-2 uppercase"
                     style={{ fontFamily: 'var(--font-mono)', color: 'var(--forge-orange)' }}
@@ -89,8 +89,7 @@ export default function CaseStudies() {
                   <p
                     className="text-sm leading-relaxed"
                     style={{
-                      color:
-                        row.label === 'RESULT' ? 'var(--forge-success)' : 'var(--forge-muted)',
+                      color: row.label === 'RESULT' ? 'var(--forge-success)' : 'var(--forge-muted)',
                       fontWeight: row.label === 'RESULT' ? 500 : 400,
                     }}
                   >
@@ -101,7 +100,7 @@ export default function CaseStudies() {
 
               {/* Quote */}
               <blockquote
-                className="mt-auto pt-6 text-sm italic leading-relaxed"
+                className="mt-auto pt-5 text-sm italic leading-relaxed"
                 style={{
                   color: 'var(--forge-muted)',
                   borderTop: '1px solid var(--forge-border)',
@@ -119,7 +118,7 @@ export default function CaseStudies() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUpVariant}
-          className="text-center mt-12"
+          className="text-center mt-10 sm:mt-12"
         >
           <a
             href="#booking"
@@ -127,7 +126,7 @@ export default function CaseStudies() {
               e.preventDefault();
               document.querySelector('#booking')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded font-medium text-white"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-4 rounded font-medium text-white text-sm sm:text-base"
             style={{
               background: 'linear-gradient(90deg, var(--forge-orange), var(--forge-gold))',
               fontFamily: 'var(--font-body)',

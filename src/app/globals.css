@@ -16,12 +16,15 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -32,6 +35,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -56,6 +60,7 @@ body {
   color: var(--forge-text);
 }
 
+/* ── Scan line ── */
 @keyframes scanline {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(100vh); }
@@ -73,6 +78,7 @@ body {
   z-index: 10;
 }
 
+/* ── Grid overlay ── */
 .grid-overlay {
   background-image:
     linear-gradient(rgba(255, 107, 26, 0.03) 1px, transparent 1px),
@@ -80,6 +86,7 @@ body {
   background-size: 60px 60px;
 }
 
+/* ── HUD text ── */
 .hud-text {
   font-family: var(--font-mono);
   font-size: 0.65rem;
@@ -88,6 +95,7 @@ body {
   text-transform: uppercase;
 }
 
+/* ── Glass panel ── */
 .glass-panel {
   background: rgba(18, 18, 26, 0.8);
   backdrop-filter: blur(10px);
@@ -95,14 +103,17 @@ body {
   border: 1px solid var(--forge-border);
 }
 
+/* ── Orange left border accent ── */
 .border-accent {
   border-left: 2px solid var(--forge-orange);
 }
 
+/* ── Circuit background ── */
 .circuit-bg {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cpath d='M10 50 H40 V20 H80' stroke='rgba(255,107,26,0.06)' stroke-width='1' fill='none'/%3E%3Cpath d='M90 70 H60 V90' stroke='rgba(255,107,26,0.06)' stroke-width='1' fill='none'/%3E%3Ccircle cx='40' cy='20' r='2' fill='rgba(255,107,26,0.08)'/%3E%3Ccircle cx='60' cy='90' r='2' fill='rgba(255,107,26,0.08)'/%3E%3C/svg%3E");
 }
 
+/* ── Marquee ── */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -116,6 +127,13 @@ body {
   animation-play-state: paused;
 }
 
+@media (max-width: 767px) {
+  .marquee-track {
+    animation-duration: 40s;
+  }
+}
+
+/* ── Pulse dot ── */
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(1.5); }
@@ -125,6 +143,7 @@ body {
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
+/* ── Shimmer button ── */
 @keyframes shimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
@@ -135,6 +154,7 @@ body {
   animation: shimmer 3s linear infinite;
 }
 
+/* ── Hide scrollbar ── */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -143,6 +163,7 @@ body {
   scrollbar-width: none;
 }
 
+/* ── Flip card — JS-controlled only, no CSS hover ── */
 .flip-card {
   perspective: 1000px;
 }
@@ -155,10 +176,14 @@ body {
   height: 100%;
 }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+/* Desktop hover via CSS */
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
 }
 
+/* JS-controlled tap toggle (mobile + desktop fallback) */
 .flip-card.flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
@@ -176,6 +201,7 @@ body {
   transform: rotateY(180deg);
 }
 
+/* ── Typewriter cursor ── */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -187,6 +213,7 @@ body {
   color: var(--forge-orange);
 }
 
+/* ── Section label ── */
 .section-label {
   font-family: var(--font-mono);
   font-size: 0.7rem;

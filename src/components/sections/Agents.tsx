@@ -6,7 +6,7 @@ import { staggerContainer, fadeUpVariant } from '@/lib/animations';
 
 export default function Agents() {
   return (
-    <section className="py-24 lg:py-32" style={{ background: 'var(--forge-black)' }}>
+    <section className="py-16 lg:py-32" style={{ background: 'var(--forge-black)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -23,7 +23,7 @@ export default function Agents() {
             variants={fadeUpVariant}
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2rem, 5vw, 4rem)',
+              fontSize: 'clamp(1.8rem, 5vw, 4rem)',
               color: 'var(--forge-text)',
             }}
           >

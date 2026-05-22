@@ -11,17 +11,17 @@ const Cal = dynamic(
 );
 
 const TRUST_SIGNALS = [
-  { icon: Shield, text: 'No fluff. No retainers. Fixed-scope builds.' },
-  { icon: Clock, text: 'First results in 14 days, guaranteed.' },
-  { icon: Star, text: 'Built by operators who\'ve been in your seat.' },
-  { icon: Zap, text: 'Live systems — not slide decks.' },
+  { icon: Shield, text: 'Custom-built for your business. Not a template.' },
+  { icon: Clock, text: 'First results within 30 days of go-live.' },
+  { icon: Star, text: 'Built by a founder who runs the same systems.' },
+  { icon: Zap, text: 'Live systems — not slide decks or proposals.' },
 ];
 
 export default function Booking() {
   return (
     <section
       id="booking"
-      className="py-24 lg:py-32 relative overflow-hidden"
+      className="py-16 lg:py-32 relative overflow-hidden"
       style={{ background: 'var(--forge-black)' }}
     >
       {/* Background glow */}
@@ -33,14 +33,14 @@ export default function Booking() {
         }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="text-center mb-12"
+          className="text-center mb-10 sm:mb-12"
         >
           <motion.p variants={fadeUpVariant} className="section-label mb-4">
             // BOOK YOUR CALL
@@ -49,7 +49,7 @@ export default function Booking() {
             variants={fadeUpVariant}
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2rem, 5vw, 4rem)',
+              fontSize: 'clamp(1.8rem, 5vw, 4rem)',
               color: 'var(--forge-text)',
             }}
           >
@@ -57,7 +57,7 @@ export default function Booking() {
           </motion.h2>
           <motion.p
             variants={fadeUpVariant}
-            className="mt-4 max-w-xl mx-auto text-base leading-relaxed"
+            className="mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed px-2"
             style={{ color: 'var(--forge-muted)' }}
           >
             30-minute discovery call. No sales pitch. We map your biggest revenue leak and tell you
@@ -65,29 +65,29 @@ export default function Booking() {
           </motion.p>
         </motion.div>
 
-        {/* Cal.com embed */}
+        {/* Cal.com embed — full width, min-height for mobile */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="rounded-lg overflow-hidden mb-12"
-          style={{ border: '1px solid var(--forge-border)', minHeight: '500px' }}
+          className="w-full rounded-lg overflow-hidden mb-8 sm:mb-12"
+          style={{ border: '1px solid var(--forge-border)', minHeight: '600px' }}
         >
           <Cal
             calLink="raeez-webber-lioqur/discovery-call-event"
-            style={{ width: '100%', height: '100%', minHeight: '500px' }}
+            style={{ width: '100%', height: '100%', minHeight: '600px' }}
             config={{ theme: 'dark' }}
           />
         </motion.div>
 
-        {/* Trust signals */}
+        {/* Trust signals — 2 col on mobile, 4 col on lg */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
         >
           {TRUST_SIGNALS.map((signal, i) => {
             const Icon = signal.icon;
@@ -102,8 +102,8 @@ export default function Booking() {
                   border: '1px solid var(--forge-border)',
                 }}
               >
-                <Icon size={16} className="mt-0.5 shrink-0" style={{ color: 'var(--forge-orange)' }} />
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--forge-muted)' }}>
+                <Icon size={15} className="mt-0.5 shrink-0" style={{ color: 'var(--forge-orange)' }} />
+                <p className="text-xs sm:text-sm leading-relaxed" style={{ color: 'var(--forge-muted)' }}>
                   {signal.text}
                 </p>
               </motion.div>

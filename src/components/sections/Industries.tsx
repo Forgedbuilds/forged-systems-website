@@ -36,21 +36,26 @@ function IndustryCard({
     <motion.div
       variants={fadeUpVariant}
       transition={{ delay: index * 0.08 }}
-      className="flip-card h-52 cursor-pointer"
-      onClick={() => setFlipped(!flipped)}
+      // 2-col on mobile (h-44), 3-col md+ (h-52)
+      className="flip-card h-44 sm:h-52 cursor-pointer"
+      onClick={() => setFlipped((f) => !f)}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
     >
       <div className={`flip-card-inner ${flipped ? 'flipped' : ''}`}>
         {/* Front */}
         <div
-          className="flip-card-front glass-panel rounded-lg flex flex-col items-center justify-center gap-4"
+          className="flip-card-front glass-panel rounded-lg flex flex-col items-center justify-center gap-3 p-4"
           style={{ border: '1px solid var(--forge-border)' }}
         >
-          {Icon && <Icon size={36} color="var(--forge-orange)" />}
+          {Icon && <Icon size={28} color="var(--forge-orange)" />}
           <span
-            className="text-xl tracking-wider"
-            style={{ fontFamily: 'var(--font-display)', color: 'var(--forge-text)' }}
+            className="text-center leading-tight"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(1rem, 3vw, 1.25rem)',
+              color: 'var(--forge-text)',
+            }}
           >
             {industry.name}
           </span>
@@ -58,7 +63,7 @@ function IndustryCard({
 
         {/* Back */}
         <div
-          className="flip-card-back rounded-lg p-6 flex flex-col justify-between"
+          className="flip-card-back rounded-lg p-4 sm:p-6 flex flex-col justify-between"
           style={{
             background: 'var(--forge-panel)',
             border: '2px solid var(--forge-orange)',
@@ -71,12 +76,15 @@ function IndustryCard({
             >
               THE FIX:
             </p>
-            <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--forge-text)' }}>
+            <p
+              className="leading-relaxed mb-3"
+              style={{ color: 'var(--forge-text)', fontSize: 'clamp(0.7rem, 2vw, 0.875rem)' }}
+            >
               {industry.fix}
             </p>
           </div>
           <div
-            className="text-sm font-medium"
+            className="text-xs sm:text-sm font-medium"
             style={{ color: 'var(--forge-gold)', fontFamily: 'var(--font-mono)' }}
           >
             ↑ {industry.result}
@@ -91,7 +99,7 @@ export default function Industries() {
   return (
     <section
       id="industries"
-      className="py-24 lg:py-32"
+      className="py-16 lg:py-32"
       style={{ background: 'var(--forge-dark)' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -101,7 +109,7 @@ export default function Industries() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="text-center mb-16"
+          className="text-center mb-10 lg:mb-16"
         >
           <motion.p variants={fadeUpVariant} className="section-label mb-4">
             // INDUSTRIES WE SERVE
@@ -110,7 +118,7 @@ export default function Industries() {
             variants={fadeUpVariant}
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2rem, 5vw, 4rem)',
+              fontSize: 'clamp(1.8rem, 5vw, 4rem)',
               color: 'var(--forge-text)',
             }}
           >
@@ -118,20 +126,20 @@ export default function Industries() {
           </motion.h2>
           <motion.p
             variants={fadeUpVariant}
-            className="mt-4 text-sm"
+            className="mt-3 text-xs sm:text-sm"
             style={{ color: 'var(--forge-muted)', fontFamily: 'var(--font-mono)' }}
           >
-            Hover to reveal the fix ↓
+            Tap to reveal the fix ↓
           </motion.p>
         </motion.div>
 
-        {/* Grid */}
+        {/* Grid — 2 col on mobile, 3 col on lg */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5"
         >
           {INDUSTRIES.map((industry, i) => (
             <IndustryCard key={i} industry={industry} index={i} />

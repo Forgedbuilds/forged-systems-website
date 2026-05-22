@@ -6,7 +6,7 @@ import { staggerContainer, fadeUpVariant } from '@/lib/animations';
 
 export default function Solution() {
   return (
-    <section id="solution" className="py-24 lg:py-32" style={{ background: 'var(--forge-dark)' }}>
+    <section id="solution" className="py-16 lg:py-32" style={{ background: 'var(--forge-dark)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -14,7 +14,7 @@ export default function Solution() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="text-center mb-16"
+          className="text-center mb-12 lg:mb-16"
         >
           <motion.p variants={fadeUpVariant} className="section-label mb-4">
             // THE FORGE SYSTEM
@@ -24,7 +24,7 @@ export default function Solution() {
             className="leading-tight max-w-3xl mx-auto"
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2rem, 5vw, 4rem)',
+              fontSize: 'clamp(1.8rem, 5vw, 4rem)',
               color: 'var(--forge-text)',
             }}
           >
@@ -32,7 +32,7 @@ export default function Solution() {
           </motion.h2>
           <motion.p
             variants={fadeUpVariant}
-            className="mt-4 max-w-xl mx-auto text-base leading-relaxed"
+            className="mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed px-2"
             style={{ color: 'var(--forge-muted)' }}
           >
             Every Forged Systems deployment is built from the same five battle-tested components,
@@ -40,24 +40,23 @@ export default function Solution() {
           </motion.p>
         </motion.div>
 
-        {/* Cards grid */}
+        {/* Cards — single col on mobile, 2 col sm, 3 col lg */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {SOLUTION_COMPONENTS.map((comp, i) => (
             <motion.div
               key={i}
               variants={fadeUpVariant}
-              transition={{ delay: i * 0.1 }}
-              className="glass-panel rounded-lg p-8 group"
+              transition={{ delay: i * 0.08 }}
+              className="glass-panel rounded-lg p-6 sm:p-8"
               style={{
                 border: '1px solid var(--forge-border)',
                 transition: 'border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease',
-                gridColumn: i === 3 ? 'span 1' : undefined,
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'var(--forge-orange)';
@@ -71,13 +70,13 @@ export default function Solution() {
               }}
             >
               <div
-                className="mb-4 text-xs tracking-widest"
+                className="mb-3 text-xs tracking-widest"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--forge-orange)' }}
               >
                 {comp.number}
               </div>
               <h3
-                className="mb-4 text-2xl tracking-wide"
+                className="mb-3 text-xl sm:text-2xl tracking-wide"
                 style={{ fontFamily: 'var(--font-display)', color: 'var(--forge-text)' }}
               >
                 {comp.name}
@@ -89,13 +88,13 @@ export default function Solution() {
           ))}
         </motion.div>
 
-        {/* Flow diagram — simplified SVG */}
+        {/* Flow diagram — hidden on small mobile, visible sm+ */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 1 }}
-          className="mt-16 flex justify-center"
+          className="hidden sm:flex mt-12 lg:mt-16 justify-center"
         >
           <svg
             viewBox="0 0 600 80"

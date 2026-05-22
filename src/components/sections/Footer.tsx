@@ -16,11 +16,12 @@ export default function Footer() {
       style={{ background: 'var(--forge-dark)', borderColor: 'var(--forge-border)' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+        {/* All columns stack and centre on mobile */}
+        <div className="flex flex-col items-center gap-8 md:flex-row md:items-start md:justify-between">
           {/* Logo + tagline */}
-          <div>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div
-              className="text-2xl tracking-widest mb-2"
+              className="text-2xl tracking-widest mb-1"
               style={{
                 fontFamily: 'var(--font-display)',
                 background: 'linear-gradient(90deg, var(--forge-orange), var(--forge-gold))',
@@ -39,7 +40,7 @@ export default function Footer() {
           </div>
 
           {/* Nav links */}
-          <nav className="flex flex-wrap items-center justify-center gap-6">
+          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.href}
